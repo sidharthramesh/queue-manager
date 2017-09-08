@@ -123,6 +123,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CELERY_BROKER_URL = config('CELERY_BROKER_URL','django://')
+CELERY_BROKER_URL = config('REDISCLOUD_URL','django://')
+
+BROKER_TRANSPORT_OPTIONS = {
+    "max_connections": 2,
+}
 
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)

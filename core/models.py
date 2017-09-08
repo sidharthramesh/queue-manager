@@ -23,3 +23,9 @@ class Patient(models.Model):
     
     def __str__(self):
         return "{} | {} | {}".format(self.token, self.number, self.q.name)
+
+class Hospital(models.Model):
+    name = models.CharField(max_length=200)
+    greeting = models.TextField(blank=True,null=True)
+    number = models.CharField(max_length=20, unique=True)
+

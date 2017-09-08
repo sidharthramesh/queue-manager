@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from ordered_model.models import OrderedModel
 # Create your models here.
 class Queue(models.Model):
     name = models.CharField(max_length=200)
@@ -13,11 +14,12 @@ def generate_token():
     else:
         return 1
 
-class Patient(models.Model):
+class Patient(OrderedModel):
     number = models.CharField(max_length=20)
     time = models.DateTimeField(default=timezone.now)
     token = models.IntegerField(default=generate_token)
     q = models.ForeignKey(Queue,models.CASCADE,'patients')
+    order_with_respect_to = 'q'
     class Meta:
         unique_together = ('time','token')
     

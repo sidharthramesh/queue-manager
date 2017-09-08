@@ -1,6 +1,16 @@
+amqp==2.2.1
+billiard==3.5.0.3
+celery==4.1.0
 Django==1.11.4
+django-celery-beat==1.0.1
+django-jet==1.0.6
 django-ordered-model==1.4.3
+enum-compat==0.0.2
+eventlet==0.21.0
 freezegun==0.3.9
+greenlet==0.4.12
+kombu==4.1.0
 python-dateutil==2.6.1
 pytz==2017.2
 six==1.10.0
+vine==1.1.4

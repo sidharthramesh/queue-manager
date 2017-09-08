@@ -1,6 +1,7 @@
 amqp==2.2.1
 billiard==3.5.0.3
 celery==4.1.0
+colorama==0.3.9
 Django==1.11.4
 django-celery-beat==1.0.1
 django-decouple==2.1
@@ -10,6 +11,7 @@ enum-compat==0.0.2
 eventlet==0.21.0
 freezegun==0.3.9
 greenlet==0.4.12
+honcho==1.0.1
 kombu==4.1.0
 python-dateutil==2.6.1
 pytz==2017.2

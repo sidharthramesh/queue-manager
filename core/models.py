@@ -6,6 +6,9 @@ class Queue(models.Model):
     name = models.CharField(max_length=200)
     active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 def generate_token():
     patients_today = Patient.objects.filter(time__date = timezone.now().date())
     last_patient = patients_today.last()
@@ -14,12 +17,12 @@ def generate_token():
     else:
         return 1
 
-class Patient(OrderedModel):
+class Patient(models.Model):
     number = models.CharField(max_length=20)
     time = models.DateTimeField(default=timezone.now)
     token = models.IntegerField(default=generate_token)
     q = models.ForeignKey(Queue,models.CASCADE,'patients')
-    order_with_respect_to = 'q'
+    name = models.CharField(max_length=100, blank=True, null=True)
     class Meta:
         unique_together = ('time','token')
     

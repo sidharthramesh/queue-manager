@@ -3,7 +3,13 @@ from freezegun import freeze_time
 from .models import Queue, Patient, Hospital
 from django.utils import timezone
 from django.shortcuts import reverse
+from .tasks import add
 # Create your tests here.
+class asyncTest(TestCase):
+    def test_async(self):
+        for i in range(100):
+            Patient.objects.create(number=i+1,q=Queue.objects.create(name=str(i)))
+        
 class PatientTests(TestCase):
     def setUp(self):
         Queue.objects.create(name='Common Q')

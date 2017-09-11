@@ -25,7 +25,7 @@ SECRET_KEY = 'bw(6-alnb986=ojeg@luyk(#ja%k)$3sjc0p!a-6u25gk89^oa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hospitalqueue.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

@@ -1,1 +1,1 @@
-web: env > .env; env PYTHONUNBUFFERED=true honcho start -f Procfile.linux 2>&1
+web: honcho start -f Procfile.linux

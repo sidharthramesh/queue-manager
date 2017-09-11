@@ -1,0 +1,3 @@
+web: gunicorn noq.wsgi
+worker: celery -A proj worker -l info
+celery_beat: celery -A proj beat

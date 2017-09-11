@@ -131,7 +131,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-CELERY_BROKER_URL = config('REDISCLOUD_URL','django://')
+CELERY_BROKER_URL = config('REDISCLOUD_URL','amqp://localhost')
 
 BROKER_TRANSPORT_OPTIONS = {
     "max_connections": 2,

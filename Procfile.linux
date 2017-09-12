@@ -1,3 +1,0 @@
-web: gunicorn noq.wsgi
-worker: celery -A noq worker -l info
-celery_beat: celery -A noq beat

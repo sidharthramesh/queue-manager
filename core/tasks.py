@@ -2,7 +2,7 @@ from celery import shared_task, task
 import requests, datetime
 
 @task
-def add(a,b):
+def add(a=3,b=1):
     return a+b
 
 @task

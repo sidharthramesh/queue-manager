@@ -1,4 +1,8 @@
-  language: python
-  python: 3.6
-  install: pip install -r requirements.txt
-  script: python manage.py test --settings=noq.test_settings
+language: python
+python: 3.6
+install: pip install -r requirements.txt
+script: python manage.py test --settings=noq.test_settings
+deploy:
+  provider: heroku
+  api_key:
+    secure: RcJWruwNhxczJemrzarEOBUPao6xeqxT+bMM6z2/jb9SlOLAq84BuA4uU/JgZhcgO6P5NorqQWDAOWZlOuobdK5EWBLA0p4l2m0buJtc0Wt9HOnkGtytfvNV6wdx698HRa6Hs9VR80NgPsewHlNTnxLGEbci5eJUgbD8KtIhcgxecde2Z06BnCZfLVsqqdTAfq+WwFPLopNP53MCAjlIKQqanJB+TenwwScGAT3pxoPUF4LYqtsE3odSDcYqnCxnwcwm0egqtEEi+HBxP93NpMwtOLmxHKSqytuHgvx8z43poo1U1c3fxxXlXj1Xa7ku3yfwei9+xdSsYcTBA/kYSBpBsrwtB7nHCThF3cr/XX2CAv7l7EPMqAoKTsHJY7XKk7SIW9GD3/2il0O0rXpdjBlpvGqOKXt8OJiQy0Pv05yjavULTUAxyYuQrnmO+YjT2/IkMjJ6dftNbhpbTUfjee1BTj0KfTeAi8DQOkihKpN07Xjr8Z3WxMHEZ3gtYPMq7Nu/Q2DtWBIhSCPMBbZYBjjy6oBCZcFkKnwT36mG5szmxGgYkRxdwZmhUg/jxBaety0qGY54qOrtzwVLsvdif2iN6BskJ1JC3d+oobAAgnZ/PhTxKa9aDYNUTUmtucvzGbGvk3okjYj3pv9nhPztpQhbv1IoqQ5bp+BBXwlgrJc=
